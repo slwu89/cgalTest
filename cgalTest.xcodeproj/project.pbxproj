@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC2472E91EFF01AC00F99AC2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC2472E81EFF01AC00F99AC2 /* main.cpp */; };
 		CC2472F61EFF049F00F99AC2 /* libboost_system-mt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2472F01EFF049F00F99AC2 /* libboost_system-mt.a */; };
 		CC2472F71EFF049F00F99AC2 /* libboost_thread-mt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2472F11EFF049F00F99AC2 /* libboost_thread-mt.a */; };
 		CC2472F81EFF049F00F99AC2 /* libCGAL_Core.12.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2472F21EFF049F00F99AC2 /* libCGAL_Core.12.0.0.dylib */; };
 		CC2472F91EFF049F00F99AC2 /* libCGAL.12.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2472F31EFF049F00F99AC2 /* libCGAL.12.0.0.dylib */; };
 		CC2472FA1EFF049F00F99AC2 /* libgmp.10.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2472F41EFF049F00F99AC2 /* libgmp.10.dylib */; };
 		CC2472FB1EFF049F00F99AC2 /* libmpfr.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2472F51EFF049F00F99AC2 /* libmpfr.4.dylib */; };
+		CCBBDB041EFF0A650020B1AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCBBDB031EFF0A650020B1AA /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,13 +30,13 @@
 
 /* Begin PBXFileReference section */
 		CC2472E51EFF01AC00F99AC2 /* cgalTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cgalTest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC2472E81EFF01AC00F99AC2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CC2472F01EFF049F00F99AC2 /* libboost_system-mt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_system-mt.a"; path = "../../../../usr/local/Cellar/boost/1.64.0_1/lib/libboost_system-mt.a"; sourceTree = "<group>"; };
 		CC2472F11EFF049F00F99AC2 /* libboost_thread-mt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_thread-mt.a"; path = "../../../../usr/local/Cellar/boost/1.64.0_1/lib/libboost_thread-mt.a"; sourceTree = "<group>"; };
 		CC2472F21EFF049F00F99AC2 /* libCGAL_Core.12.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCGAL_Core.12.0.0.dylib; path = ../../../../usr/local/Cellar/cgal/4.9.1/lib/libCGAL_Core.12.0.0.dylib; sourceTree = "<group>"; };
 		CC2472F31EFF049F00F99AC2 /* libCGAL.12.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCGAL.12.0.0.dylib; path = ../../../../usr/local/Cellar/cgal/4.9.1/lib/libCGAL.12.0.0.dylib; sourceTree = "<group>"; };
 		CC2472F41EFF049F00F99AC2 /* libgmp.10.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp.10.dylib; path = ../../../../usr/local/Cellar/gmp/6.1.2/lib/libgmp.10.dylib; sourceTree = "<group>"; };
 		CC2472F51EFF049F00F99AC2 /* libmpfr.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmpfr.4.dylib; path = ../../../../usr/local/Cellar/mpfr/3.1.5/lib/libmpfr.4.dylib; sourceTree = "<group>"; };
+		CCBBDB031EFF0A650020B1AA /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 		CC2472E71EFF01AC00F99AC2 /* cgalTest */ = {
 			isa = PBXGroup;
 			children = (
-				CC2472E81EFF01AC00F99AC2 /* main.cpp */,
+				CCBBDB031EFF0A650020B1AA /* main.cpp */,
 			);
 			path = cgalTest;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC2472E91EFF01AC00F99AC2 /* main.cpp in Sources */,
+				CCBBDB041EFF0A650020B1AA /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +300,7 @@
 				CC2472EE1EFF01AC00F99AC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
