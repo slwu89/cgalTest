@@ -17,18 +17,17 @@
 #include <CGAL/Exact_predicates_exact_constructions_kernel.h>
 #include <sstream>
 
-// typedefs
+// convexHullVector
+#include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
+#include <CGAL/convex_hull_2.h>
+#include <vector>
 
-// for pointsAndSegment
+
+// pointsAndSegment
 typedef CGAL::Simple_cartesian<double> Kernel;
 typedef Kernel::Point_2 Point_2;
 typedef Kernel::Segment_2 Segment_2;
 
-// for kernel
-typedef CGAL::Exact_predicates_exact_constructions_kernel KernelExact;
-typedef KernelExact::Point_2 Point_2_Exact;
-
-// pointsAndSegment
 void pointsAndSegment()
 {
     Point_2 p(1,1), q(10,10);
@@ -58,7 +57,11 @@ void pointsAndSegment()
     std::cout << " midpoint(p,q) = " << CGAL::midpoint(p,q) << std::endl;
 }
 
+
 // kernel
+typedef CGAL::Exact_predicates_exact_constructions_kernel KernelExact;
+typedef KernelExact::Point_2 Point_2_Exact;
+
 void kernel()
 {
     Point_2_Exact p(double(0.0), 0.3), q, r(double(2.0), 0.9);
@@ -81,6 +84,25 @@ void kernel()
 }
 
 
+// we can also fill the "points" from a STL vector as shown below:
+// fill from a vector:
+typedef CGAL::Exact_predicates_inexact_constructions_kernel KernelInexact;
+typedef KernelInexact::Point_2 Point_2_Inexact;
+typedef std::vector<Point_2_Inexact> PointsInexact;
+
+void convexHullVector(){
+
+    PointsInexact points, result;
+    points.push_back(Point_2_Inexact(0,0));
+    points.push_back(Point_2_Inexact(10,0));
+    points.push_back(Point_2_Inexact(10,10));
+    points.push_back(Point_2_Inexact(6,5));
+    CGAL::convex_hull_2(points.begin(), points.end(), std::back_inserter(result));
+    std::cout << result.size() << " points on the convex hull" << std::endl;
+    
+}
+
+
 int main(){
     std::cout << "RUNNING POINTS AND SEGMENT! " << std::endl;
     std::cout << "" << std::endl;
@@ -90,6 +112,11 @@ int main(){
     std::cout << "RUNNING EXACT KERNEL! " << std::endl;
     std::cout << "" << std::endl;
     kernel();
+    std::cout << "" << std::endl;
+    
+    std::cout << "RUNNING CONVEX HULL VECTOR! " << std::endl;
+    std::cout << "" << std::endl;
+    convexHullVector();
     std::cout << "" << std::endl;
     
     return(0);
