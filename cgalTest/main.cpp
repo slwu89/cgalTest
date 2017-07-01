@@ -162,10 +162,16 @@ void boundedTriangulation(){
     dt2.draw_dual(vor);
     //print the cropped Voronoi diagram as segments
     int size = vor.m_cropped_vd.size();
-    std::vector<Segment_2> out(size);
+    
+    // get the segments out
+    std::vector<Segment_2> segmentOut(size);
     std::copy(vor.m_cropped_vd.begin(),vor.m_cropped_vd.end(),
-              out.begin());
-
+              segmentOut.begin());
+    for(auto it = segmentOut.begin(); it != segmentOut.end(); it++){
+        std::cout << "thing inside of segmentOut: " << *it << "and:" << std::endl;
+        std::cout << "point inside of segmentOut: " << it->point(0).x()  << std::endl;
+    }
+    
 }
 
 
