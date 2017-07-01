@@ -29,6 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CC1E01DC1F017D4C0001BEB4 /* cgalTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = cgalTest.xcodeproj; sourceTree = "<group>"; };
 		CC2472E51EFF01AC00F99AC2 /* cgalTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cgalTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2472F01EFF049F00F99AC2 /* libboost_system-mt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_system-mt.a"; path = "../../../../usr/local/Cellar/boost/1.64.0_1/lib/libboost_system-mt.a"; sourceTree = "<group>"; };
 		CC2472F11EFF049F00F99AC2 /* libboost_thread-mt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_thread-mt.a"; path = "../../../../usr/local/Cellar/boost/1.64.0_1/lib/libboost_thread-mt.a"; sourceTree = "<group>"; };
@@ -56,6 +57,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC1E01DD1F017D4C0001BEB4 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CC2472DC1EFF01AC00F99AC2 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +90,7 @@
 		CC2472EF1EFF049F00F99AC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC1E01DC1F017D4C0001BEB4 /* cgalTest.xcodeproj */,
 				CC2472F01EFF049F00F99AC2 /* libboost_system-mt.a */,
 				CC2472F11EFF049F00F99AC2 /* libboost_thread-mt.a */,
 				CC2472F21EFF049F00F99AC2 /* libCGAL_Core.12.0.0.dylib */,
@@ -139,6 +146,12 @@
 			mainGroup = CC2472DC1EFF01AC00F99AC2;
 			productRefGroup = CC2472E61EFF01AC00F99AC2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CC1E01DD1F017D4C0001BEB4 /* Products */;
+					ProjectRef = CC1E01DC1F017D4C0001BEB4 /* cgalTest.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CC2472E41EFF01AC00F99AC2 /* cgalTest */,
