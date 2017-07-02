@@ -127,6 +127,8 @@ typedef K::Segment_2 Segment_2;
 typedef K::Ray_2 Ray_2;
 typedef K::Line_2 Line_2;
 typedef CGAL::Delaunay_triangulation_2<K> Delaunay_triangulation_2;
+typedef Delaunay_triangulation_2::Edge_iterator Edge_iterator;
+
 
 //A class to recover Voronoi diagram from stream.
 //Rays, lines and segments are cropped to a rectangle
@@ -152,6 +154,7 @@ void boundedTriangulation(){
     points.push_back(Point_2(0,0));
     points.push_back(Point_2(1,1));
     points.push_back(Point_2(0,1));
+    points.push_back(Point_2(1,0));
     Delaunay_triangulation_2 dt2;
     //insert points into the triangulation
     dt2.insert(points.begin(),points.end());
@@ -160,6 +163,7 @@ void boundedTriangulation(){
     Cropped_voronoi_from_delaunay vor(bbox);
     //extract the cropped Voronoi diagram
     dt2.draw_dual(vor);
+    
     //print the cropped Voronoi diagram as segments
     int size = vor.m_cropped_vd.size();
     
@@ -168,9 +172,28 @@ void boundedTriangulation(){
     std::copy(vor.m_cropped_vd.begin(),vor.m_cropped_vd.end(),
               segmentOut.begin());
     for(auto it = segmentOut.begin(); it != segmentOut.end(); it++){
-        std::cout << "thing inside of segmentOut: " << *it << "and:" << std::endl;
-        std::cout << "point inside of segmentOut: " << it->point(0).x()  << std::endl;
+        std::cout << "thing inside of segmentOut: " << *it << std::endl;
+        std::cout << "first point inside of segmentOut's x value: " << it->point(0).x()  << std::endl;
     }
+    
+    int ns = 0;
+    int nr = 0;
+    Edge_iterator eit =dt2.edges_begin();
+    for ( ; eit !=dt2.edges_end(); ++eit) {
+        CGAL::Object o = dt2.dual(eit);
+        if (CGAL::object_cast<K::Segment_2>(&o)){
+            ++ns;
+        } else if (CGAL::object_cast<K::Ray_2>(&o)){
+            
+            const Ray_2 * ray = CGAL::object_cast<K::Ray_2>(&o);
+            
+            std::cout << "ray: " << *ray << std::endl;
+            double oo = ray->point(0).x();
+            std::cout << "point in the ray " << oo << std::endl;
+            ++nr;
+        }
+    }
+    std::cout << "The Voronoi diagram has " << ns << " finite edges " << " and " << nr << " rays" << std::endl;
     
 }
 
